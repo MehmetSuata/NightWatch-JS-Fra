@@ -5,9 +5,13 @@
 
   <testsuite name="ui_Test"
     errors="0" failures="0" hostname="" id="" package="ui_Test" skipped="0"
-    tests="1" time="10.70" timestamp="">
+    tests="1" time="12.06" timestamp="">
   
-    <testcase name="basicAssert" classname="ui_Test" time="10.70" assertions="0">
+    <testcase name="navigationBarTest" classname="ui_Test" time="12.06" assertions="2">
+
+    
+
+    
     </testcase>
   
 
