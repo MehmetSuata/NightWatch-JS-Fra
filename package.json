@@ -1,16 +1,21 @@
 {
-  "name": "NightWachPractice",
+  "name": "NightWatch-JS-Fra-main",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "test": "nightwatch",
+    "debug": "node --inspect-brk node_modules/.bin/nightwatch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "nightwatch": "^1.5.1"
+  },
   "devDependencies": {
     "chromedriver": "^89.0.0",
-    "nightwatch": "^1.5.1"
+    "html-dnd": "^1.2.1"
   }
 }

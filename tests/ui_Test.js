@@ -1,10 +1,8 @@
-module.exports={
-    tags:["ui"],
+const dragAndDrop =require('html-dnd').codeForSelectors
 
-    "ui_Test":""+ function(browser){
-    browser.url("https://suataconsultancy.com");
-    browser.end();
-},
+module.exports={
+    tags:["ui_Smoke"],
+
     "basicAssert":""+ function(browser){
         browser.url("https://suataconsultancy.com");
         browser.assert.visible("#menu-item-18 > a > span");
@@ -25,7 +23,7 @@ module.exports={
         .end();
             
 },
-    "navigationBarTest": function(browser){
+    "navigationBarTest":""+function(browser){
         let suatahomepage =browser.page.suatacons();
         suatahomepage.navigate()
         .assert.titleContains('Home - SuataConsultancy')
@@ -34,7 +32,42 @@ module.exports={
         .click('@navigationBar')
         .pause(2000);  
 
+    },
+
+    "contactsPageFunctionality":""+function(browser){
+        const firstNameBoxSelector="#forminator-field-name-1";
+
+        browser
+        .url("https://suataconsultancy.com/contacts/")
+        .setValue(firstNameBoxSelector,"MKSuata")
+        .saveScreenshot('test_output/suatacon.png');
+        
+    },
+
+    "Functionality on HomePage": browser => {
+        let suatahomepage=browser.page.suatacons();
+        suatahomepage
+        .navigate()
+        .waitForElementVisible('@navigationBar')
+        .assert.visible('@navigationBar')
+        .assert.visible('@learnMoreButton')
+        .assert.containsText(suatahomepage.elements.learnMoreButton,'Learn More')
+        .pause(2000);
+        
+        // browser.execute(dragAndDrop,['',''])
+        // browser.end();
+       
     }
+
+
+
+
+
+    
+
+
+   
+
 
 };
 
